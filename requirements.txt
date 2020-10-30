@@ -1,0 +1,9 @@
+urllib3
+flask
+requests
+bs4
+pyfiglet
+metar
+html5lib
+gunicorn
+flask_session

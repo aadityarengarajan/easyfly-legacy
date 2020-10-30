@@ -1,0 +1,9 @@
+{
+	"name" : "EasyFly (Legacy)",
+	"description" : "Experimental OFP Briefing Generator.",
+	"created" : "11/11/2020",
+	"completed" : "true",
+	"modules" : ["flask","flask_session","os","datetime","secrets","requests","csv","math","threading","shutil","urllib","bs4","pyfiglet","metar"],
+	"hosting" : {"hosted" : "false"},
+	"code" : "EA-11112020-033541"
+}

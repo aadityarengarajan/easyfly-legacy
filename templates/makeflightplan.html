@@ -1,0 +1,195 @@
+<html> 
+   <head>
+   	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<!-- Wide card with share menu button -->
+	<style>
+	.demo-card-wide.mdl-card {
+	  width: 512px;
+	  height:85%;
+	  background-color: rgba(255,255,255,1);
+	  /*overflow-y: scroll;*/
+	}
+	.demo-card-wide > .mdl-card__title {
+	  color: #fff;
+	  height: 176px;
+	  background: url('https://www.snopes.com/tachyon/2018/06/red_eye_flight_plane.jpg?resize=865,452') center / cover;
+	}
+	.demo-card-wide > .mdl-card__menu {
+	  color: #fff;
+	}
+	.mdl-layout {
+	  align-items: center;
+	  justify-content: center;
+	}
+	</style>
+	<link rel="icon" type="image/png" href="https://webstockreview.net/images/airplane-clipart-logo-3.png"/>
+	<title>Log Flight Plan</title>
+   </head>
+   <body style="background-image:url('https://wallpaperaccess.com/full/445636.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"> 
+   <div class="mdl-layout">
+   <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+	<div class="mdl-card__title">
+	  <h2 class="mdl-card__title-text">File a Flight Plan</h2>
+	</div>
+  	<div class="mdl-card__supporting-text">
+      <form action = "/flightplan" method = "POST">
+		  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "width:48%;" id="callsign">
+		    <input class="mdl-textfield__input" type="text" id="sample3" name = "callsign" maxlength = "6" style = "width:100%;">
+		    <label class="mdl-textfield__label" for="sample3" style = "width:100%;">CALLSIGN</label>
+		  </div>
+		  <div class="mdl-tooltip" data-mdl-for="callsign">
+			ICAO NUMBER (eg.UAE666)
+		  </div>
+		  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-group" style = "width:49%;">
+		    <label for="exampleFormControlSelect1">Aircraft</label>
+		    <select class="form-control" id="exampleFormControlSelect1" name="aircraft">
+		  			<option class="username_sel" value="A300">Airbus A300</option>
+					<option class="username_sel" value="A310">Airbus A310</option>
+					<option class="username" value="A318">Airbus A318</option>
+					<option class="username" value="A319">Airbus A319</option>
+		            <option class="username" value="A320">Airbus A320</option>
+					<option class="username" value="A321">Airbus A321</option>
+					<option class="username" value="A332">Airbus A330</option>
+					<option class="username" value="A350">Airbus A350</option>
+					<option class="username" value="A381">Airbus A380-100</option>
+					<option class="username" value="AT42">ATR 42 Twin Turboprop</option>
+					<option class="username" value="AT72">ATR 72 Twin Turboprop</option>
+					<option class="username" value="JS41">BAe Jetstream 41 Turboprop</option>
+
+					<option class="username" value="B190">Beechcraft 1900</option>
+					<option class="username" value="B350">Beechcraft KingAir 350</option>
+					<option class="username" value="B707">Boeing 707-320B</option>
+					<option class="username" value="B712">Boeing 717-200</option>
+					<option class="username" value="B721">Boeing 727-100</option>
+					<option class="username" value="B722">Boeing 727-200</option>
+					<option class="username" value="B732">Boeing 737-200</option>
+					<option class="username" value="B733">Boeing 737-300</option>
+					<option class="username" value="B734">Boeing 737-400</option>
+					<option class="username" value="B735">Boeing 737-500</option>
+					<option class="username" value="B736">Boeing 737-600</option>
+
+					<option class="username" value="B737">Boeing 737-700</option>
+					<option class="username" value="B738">Boeing 737-800</option>
+					<option class="username" value="B739">Boeing 737-900</option>
+					<option class="username" value="B744">Boeing 747-400</option>
+					<option class="username" value="B748">Boeing 747-800</option>
+
+					<option class="username" value="B752">Boeing 757-200</option>
+					<option class="username" value="B753">Boeing 757-300</option>
+					<option class="username" value="B763">Boeing 767-300</option>
+					<option class="username" value="B772">Boeing 777-200</option>
+					<option class="username" value="B773">Boeing 777-300</option>
+					<option class="username" value="B788">Boeing 787-800</option>
+
+					<option class="username" value="C17">Boeing C-17 Globemaster</option>
+					<option class="username" value="B788">Boeing Dreamliner 787-800</option>
+					<option class="username" value="DH8C">Bombardier Dash 8 Q300</option>
+					<option class="username" value="DH8D">Bombardier Dash 8 Q400</option>
+
+					<option class="username" value="C130">C-130 Hercules</option>
+					<option class="username" value="CRJ2">Canadair CRJ-200</option>
+					<option class="username" value="CRJ7">Canadair CRJ-700</option>
+					<option class="username" value="CRJ9">Canadair CRJ-900</option>
+					<option class="username" value="C550">Cessna Citation II</option>
+					<option class="username" value="C750">Cessna Citation X</option>
+					<option class="username" value="C208">Cessna Grand Caravan</option>
+					<option class="username" value="CV24">Convair 240</option>
+					<option class="username" value="CV58">Convair 580</option>
+
+					<option class="username" value="DHC6">De Havilland DHC-6</option>
+					<option class="username" value="D328">Dornier 328 Turboprop</option>
+					<option class="username" value="DC3">Douglas DC-3</option>
+					<option class="username" value="DC93">Douglas DC9-30</option>
+					<option class="username" value="C47">Douglas C-47 Skytrain</option>
+					<option class="username" value="C47">Douglas C-53 Skytrooper</option>
+					<option class="username" value="DC10">Douglas DC-10-30</option>
+					<option class="username" value="E120">Embraer Brasilia E120</option>
+
+					<option class="username" value="E135">Embraer ERJ-135</option>
+					<option class="username" value="E145">Embraer ERJ-145</option>
+					<option class="username" value="E170">Embraer 170</option>
+					<option class="username" value="E175">Embraer 175</option>
+					<option class="username" value="E190">Embraer 190</option>
+
+					<option class="username" value="FA7X">Dassault Falcon 7X</option>
+					<option class="username" value="F50">Fokker 50</option>
+					<option class="username" value="F70">Fokker 70</option>
+					<option class="username" value="G500">Gulfstream 500</option>
+					<option class="username" value="QK10">Quest Kodiak 100</option>
+					<option class="username" value="L101">Lockheed Constellation</option>
+					<option class="username" value="L15">Lockheed L1011-500 Tristar</option>
+					<option class="username" value="LJ45">Learjet 45</option>
+					<option class="username" value="MD11">McDonnell-Douglas MD-11</option>
+					<option class="username" value="MD83">McDonnell-Douglas MD80</option>
+					<option class="username" value="MD93">McDonnell-Douglas MD90</option>
+					<option class="username" value="PC12">Pilatus PC-12 NG</option>
+					<option class="username" value="SF34">Saab 340B</option>
+		    </select>
+		  </div> 
+		  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "width:49%;">
+		    <input class="mdl-textfield__input" type="text" id="sample3" name = "depticao" maxlength = "4" style = "width:100%;">
+		    <label class="mdl-textfield__label" for="sample3" style = "width:100%;">DEPT ICAO</label>
+		 </div>
+		 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "width:49%;">
+		    <input class="mdl-textfield__input" type="text" id="sample3" name = "arricao" maxlength = "4" style = "width:100%;">
+		    <label class="mdl-textfield__label" for="sample3" style = "width:100%;">ARRIVAL ICAO</label>
+		 </div>
+		  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "width:49%;" id="crzspd">
+		    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4" name="kts" maxlength = "4" style = "width:100%;">
+		    <label class="mdl-textfield__label" for="sample3" style = "width:100%;">CRUISE SPEED</label>
+		    <span class="mdl-textfield__error">ENTER A NUMBER</span>
+		  </div>
+		  <div class="mdl-tooltip" data-mdl-for="crzspd">
+			(in knots)
+		  </div>
+		 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" style = "width:49%;" id="altitude">
+		    <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+		      <p>FL</p>
+		    </label>
+		    <div class="mdl-textfield__expandable-holder">
+		      <input class="mdl-textfield__input" type="text" id="sample6" pattern="-?[0-9]*(\.[0-9]+)?" name="alt" maxlength = "4">
+		      <label class="mdl-textfield__label" for="sample-expandable">ALTITUDE</label>
+		    </div>
+		 </div>
+		<div class="mdl-tooltip" data-mdl-for="altitude">
+			ALTITUDE
+		</div>
+		<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="usesid" style="width:30%">
+		  <input type="checkbox" id="usesid" class="mdl-checkbox__input" name="usesid" value="1" checked>
+		  <span class="mdl-checkbox__label">Use SIDs</span>
+		</label>
+		<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2" style="width:30%">
+		  <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" name="usestar" value="1" checked>
+		  <span class="mdl-checkbox__label">Use STARs</span>
+		</label>
+		<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1" style="width:30%" id="rnaveqq">
+		  <input type="checkbox" id="switch-1" class="mdl-switch__input" name="rnav" value="1" checked>
+		  <span class="mdl-switch__label">RNAV</span>
+		</label>
+		 <div class="mdl-tooltip" data-mdl-for="rnaveqq">
+			RNAV Equipped
+		  </div> 
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "width:100%;">
+		    <input class="mdl-textfield__input" type="text" id="sample3" name = "pic">
+		    <p class="mdl-textfield__label" for="sample3">PILOT IN COMMAND (PIC)</p>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style = "width:100%;height:30%;">
+		    <textarea class="mdl-textfield__input" type="text" id="sample3" name = "rem" style="height:250px"></textarea>
+		    <label class="mdl-textfield__label" for="sample3">REMARKS</label>
+		</div>
+		<input type = "submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id="submitbtn" value = "Log Flight Plan"/>
+	  </form>    
+	 </div>
+	</div>
+    </div>        
+   </body> 
+</html>
